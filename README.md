@@ -2,48 +2,48 @@
 ## Enunciado Docker
 Para esta parte de la práctica crearemos dos imágenes Docker, una de frontend y otra de midleware.
 1. La imagen de midleware, tendrá como mínimo lo siguiente:
-* una imagen base oficial de python
-* el meta-dato necesario que identifique al desarrollador
-* la variable de entorno PORT, que define el puerto en el que escuchará el servicio de python, inicializada a 2000
-* una copia del Dockerfile en el directorio /tmp
-* el fichero server.py que se os proporciona, en una ruta de trabajo definida previamente
-* y el comando que arranque el servicio de python.
+    * una imagen base oficial de python
+    * el meta-dato necesario que identifique al desarrollador
+    * la variable de entorno PORT, que define el puerto en el que escuchará el servicio de python, inicializada a 2000
+    * una copia del Dockerfile en el directorio /tmp
+    * el fichero server.py que se os proporciona, en una ruta de trabajo definida previamente
+    * y el comando que arranque el servicio de python.
 
 2. Para la de Frontend, se os proporciona los ficheros: nginx.conf y el run.sh
-* La imagen se basará en la última versión oficial de nginx
-* se copiará el Dockerfile al directorio /tmp
-* tendrá el meta-dato que identifique al desarrollador
-* dos variables de entorno (PY_SERVER y PY_PORT) inicializadas al valor deseado
-* el directorio de trabajo será el /etc/nginx
-* la imagen contendrá los dos ficheros proporcionados
-* y el script de arranque por defecto será el run.sh
+    * La imagen se basará en la última versión oficial de nginx
+    * se copiará el Dockerfile al directorio /tmp
+    * tendrá el meta-dato que identifique al desarrollador
+    * dos variables de entorno (PY_SERVER y PY_PORT) inicializadas al valor deseado
+    * el directorio de trabajo será el /etc/nginx
+    * la imagen contendrá los dos ficheros proporcionados
+    * y el script de arranque por defecto será el run.sh
 
 ### Notas 
-* Las imágenes se generarán con el nombre <USER>_img_python y <USER>_img_nginx
+  * Las imágenes se generarán con el nombre <USER>_img_python y <USER>_img_nginx
 
 ##  Enunciado docker-compose
 Definir en el fichero yaml dos servicios:
-* <USER>_python_srv y <USER>_nginx_srv especificando la dependencia entre ellos
-* cambiar el puerto donde escucha el servicio de python por el 6000
-* definir las variables de entorno necesarios para que se conecten entre ellos
-* montar el directorio /data del servicio <USER>_python_srv con un volumen llamado <USER>_data
+  * <USER>_python_srv y <USER>_nginx_srv especificando la dependencia entre ellos
+  * cambiar el puerto donde escucha el servicio de python por el 6000
+  * definir las variables de entorno necesarios para que se conecten entre ellos
+  * montar el directorio /data del servicio <USER>_python_srv con un volumen llamado <USER>_data
 
 
 
 ### Notas
-* No se volverá a construir ninguna imagen, se utilizarán las imágenes construidas en el apartado anterior <USER>_img_python y <USER>_img_nginx).
-* Se comprobará que ambos servicios están bien integrados llamando al método /hostname del servicio de python a través del Frontend (puerto 80 del nginx). 
-```bash 
+  * No se volverá a construir ninguna imagen, se utilizarán las imágenes construidas en el apartado anterior <USER>_img_python y <USER>_img_nginx).
+  * Se comprobará que ambos servicios están bien integrados llamando al método /hostname del servicio de python a través del Frontend (puerto 80 del nginx). 
+  ```bash 
   wget -qO- <URL_NGINX>:80/hostname
-```
-* Para validar que el volumen está bien definido e integrado
-* llamaremos a los métodos /write y /read
-```bash 
+  ```
+  * Para validar que el volumen está bien definido e integrado
+  * llamaremos a los métodos /write y /read
+  ```bash 
   wget -qO- <URL_NGINX>:80/write
   wget -qO- <URL_NGINX>:80/read
  ```
-* reiniciaremos docker-compose
-* llamaremos al método /read 
+  * reiniciaremos docker-compose
+  * llamaremos al método /read 
   ```bash 
   wget -qO- <URL_NGINX>:80/read
   ```
@@ -91,9 +91,9 @@ Para la realización de esta práctica se solicita la creación de un cluster de
 ## Entregables
 
 1. Entregar en un paquete tar comprimido con tu nombre y apellido (p.e. NombreApellido.tar.gz) que contenga:
-  * Los dos Dockerfile para la creación de imágenes
-  * docker-compose.yaml
-  * los yaml de definición de todos los objetos pedidos en el enunciado.
+    * Los dos Dockerfile para la creación de imágenes
+    * docker-compose.yaml
+    * los yaml de definición de todos los objetos pedidos en el enunciado.
 
 > En caso de creerlo conveniente, añadir un fichero README.txt con lo que se quiera comentar: comandos de despliegue, configuraciones a tener en cuenta, problemas encontrados y soluciones, etc.
 
