@@ -1,4 +1,5 @@
 # Práctica convocatoria extraordinaria CE3
+Tienes hasta el día 21 de Junio para entregar esta práctica
 ## Enunciado Docker
 Para esta parte de la práctica crearemos dos imágenes Docker, una de frontend y otra de midleware.
 1. La imagen de midleware, tendrá como mínimo lo siguiente:
