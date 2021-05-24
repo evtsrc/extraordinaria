@@ -103,9 +103,8 @@ No se evaluará nada que no arranque con los ficheros entregados. Esto quiere de
 
 |Entrega|Valor|
 |------------------|-----------|	
-|Dockerfiles|15%|
+|Dockerfiles|20%|
 |Docker-compose|+5%|
 |Despliegue en k8s|+25%|
 |Escalado automático|+10%|
 |Liveness & Readiness|+15%|
-|Objeto extra de k8s|+5%|
