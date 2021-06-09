@@ -66,7 +66,7 @@ Para la realización de esta práctica se solicita la creación de un cluster de
     * Límite de CPU: 0.125
     * Límite memoria: 64 Mi
 
-3. Se tiene que acceder a la aplicación mediante un servicio de tipo LoadBalancer en el puerto 8080.
+3. Se tiene que acceder a la aplicación pasando por nginx mediante un servicio de tipo LoadBalancer en el puerto 8080.
 
 ## Configuraciones adicionales
 
